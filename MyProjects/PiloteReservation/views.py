@@ -28,7 +28,10 @@ def home(request):
             'validateWeekdays':validateWeekdays,
             'heures':heures
         })
-    
+    return render(request, 'table.html', {})
+def table(request):
+     return render(request, 'table.html', {})
+ 
 def validWeekday(jours):
     ajourdhui = datetime.now()
     weekdays = []
