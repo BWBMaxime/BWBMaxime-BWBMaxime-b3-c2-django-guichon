@@ -1,5 +1,48 @@
 {% extends 'base.html' %}
 
 {% block content %}
-<h1>Reserve Ton Cour De Pilotage !</h1>
+<h1>Reservation</h1>
+
+<div>
+    <form method="post" required>
+        <div>
+            <h3>Choix de l'école</h3>
+            <select name="ecole">
+                <option value="Ecole de la comédie">Ecole de la comédie</option>
+                <option value="Ecole de Saint-Eloi">Ecole de Saint-Eloi</option>
+                <option value="Ecole de Port Marianne">Ecole de Port Marianne</option>
+                <option value="Ecole de Saint-Jean-De-Védas">Ecole de Saint-Jean-De-Védas</option>
+
+            </select>
+        </div>
+        <div>
+            <h3>Choix du service</h3>
+            <select name="service">
+                <option value="Voiture">Voiture</option>
+                <option value="Moto">Moto</option>
+                <option value="Avion">Avion</option>
+                <option value="Bateau">Bateau</option>
+            </select>
+        </div>
+        <div>
+            <h3>Jour :</h3>
+            <select name="jour">
+                {% for validateWeekday in validateWeekdays %}
+                <option value="{{validateWeekday}}">{{validateWeekday}}</option>
+                {% endfor %}
+            </select>
+        </div>
+        <div>
+            <h3>Heure :</h3>
+            <select name="heure">
+                {% for heure in heures %}
+                <option value="{{heure}}">{{heure}}</option>
+                {% endfor %}
+            </select>
+        </div>
+        <br />
+        <button type="submit">Continue</button>
+    </form>
+</div>
+
 {% endblock %}
